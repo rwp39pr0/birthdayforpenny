@@ -2,6 +2,9 @@ var SkySpace = document.getElementById('Sky');
 var width = SkySpace.offsetWidth;
 var height = SkySpace.offsetHeight;
 
+let vh = window.innerHeight * 0.01;
+document.documentElement.style.setProperty('--vh', `${vh}px`);
+
 // 執行 流星
 setInterval(()=>{
     var star = new ShootingStar();
