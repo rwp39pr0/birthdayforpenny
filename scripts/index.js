@@ -5,6 +5,15 @@ var height = SkySpace.offsetHeight;
 let vh = window.innerHeight * 0.01;
 document.documentElement.style.setProperty('--vh', `${vh}px`);
 
+document.getElementById('PrayBoard').addEventListener('click', (e) => {
+    console.log(e.target);
+    if(e.target.id != 'PrayBoard'){
+        return;
+    }
+    hiddenPray();
+    
+  });
+
 // 執行 流星
 setInterval(()=>{
     var star = new ShootingStar();
@@ -107,6 +116,7 @@ function Letter( letter ){
 
         setTimeout(() => {
             line.classList.add('fade-out');
+            setTimeout(()=> {line.remove()},1000);
         }, 3000);
     }
 
@@ -125,6 +135,11 @@ function ShowPray(){
 
     var board = document.getElementById('PrayBoard');
     board.style.visibility = 'visible';
+}
+
+function hiddenPray(){
+    var board = document.getElementById('PrayBoard');
+    board.style.visibility = 'hidden';
 }
 
 function Send(){
