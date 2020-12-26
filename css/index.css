@@ -1,0 +1,195 @@
+body{
+    margin: 0px;
+    background-color: #000000;
+}
+
+/*基底*/
+.base{
+    margin: auto;
+    width: 800px;
+    height: 100vh;
+    background-image: url("../images/sky.jpg");
+    background-repeat: no-repeat;
+    background-size: 100%;
+    background-color: #000000;
+    position: relative;
+}
+
+/*山*/
+.mountain{
+    position: absolute;
+    bottom: 0px;
+    width: 100%;
+}
+.mountain img{
+    width: 100%;
+}
+
+/*天空*/
+.sky{
+    width: 100%;
+    height: 75%;
+    position: absolute;
+    overflow: hidden;
+}
+
+/*星星*/
+.star{
+    position: absolute;
+    display: inline-block;
+    width: 3px;
+    height: 3px;
+    background-color: #FFFFFF;
+    border-radius: 100%;
+    box-shadow: #FFFFFF 0px 1px;
+    opacity: 0;
+}
+
+.star.falling{
+    animation: fall 2s linear infinite;
+    -webkit-animation: fall 2s linear infinite;
+    -moz-animation: fall 2s linear infinite;
+}
+
+.star:after {
+    content: '';
+    display: block;
+    border: 0px solid #fff;
+    border-width: 0px 90px 2px 90px;
+    border-color: transparent transparent transparent rgba(255, 255, 255, .5);
+    box-shadow: 0 0 1px 0 rgba(255, 255, 255, .1);
+    /*變形*/       
+    transform: rotate(-45deg) translate3d(1px, 3px, 0);
+    -webkit-transform: rotate(-45deg) translate3d(1px, 3px, 0);
+    -moz-transform: rotate(-45deg) translate3d(1px, 3px, 0);
+    transform-origin: 0% 100%;
+    -webkit-transform-origin: 0% 100%;
+    -moz-transform-origin: 0% 100%;
+}
+
+
+@media (max-width:1024px){
+    .base{
+        width: 100%;
+    }
+}
+
+/*動畫*/
+@keyframes fall {
+    0% {
+        opacity: 0;
+        transform: scale(0.5) translate3d(0, 0, 0);
+        -webkit-transform: scale(0.5) translate3d(0, 0, 0);
+        -moz-transform: scale(0.5) translate3d(0, 0, 0);
+    }
+    70% {
+        opacity: 1;
+        transform: translate3d(-200px, 200px, 0);
+        -webkit-transform: translate3d(-200px, 200px, 0);
+        -moz-transform: translate3d(-200px, 200px, 0);
+    }
+    100% {
+        opacity: 0;
+        transform: scale(1.2) translate3d(-300px, 300px, 0);
+        -webkit-transform: scale(1.2) translate3d(-300px, 300px, 0);
+        -moz-transform: scale(1.2) translate3d(-300px, 300px, 0);
+    }
+}
+
+/*信*/
+.letter{
+    position: absolute;
+    bottom: 60px;
+    width: 100%;
+}
+
+.letter p{
+    color: #FFFFFF;
+    font-size: 32px;
+    text-align: center;
+}
+
+.fade-in{
+    animation: fadein 1s ease-in ;
+    -webkit-animation: fadein 1s ease-in ;
+    -moz-animation: fadein 1s ease-in ;
+}
+
+.fade-out{
+    animation: fadeout 1s ease-out ;
+    -webkit-animation: fadeout 1s ease-out ;
+    -moz-animation: fadeout 1s ease-out ;
+    opacity: 0;
+}
+
+@keyframes fadein{
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+
+@keyframes fadeout{
+    0% {
+        opacity: 1;
+    }
+    100% {
+        opacity: 0;
+    }
+}
+
+
+/*許願按鈕*/
+.button-block{
+    position: absolute;
+    bottom: 300px;
+    text-align: center;
+    width: 100%;
+}
+.button-block button{
+    border-radius: 50%;
+    width: 80px;
+    height: 80px;
+    background-image: url("../images/pray.jpg");
+    background-size: contain;
+}
+
+/*許願板*/
+.overlay{
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    background-color: #00000077;
+    top: 0;
+    text-align: center;
+    visibility: hidden;
+}
+
+.pray-panel{
+    position: absolute;
+    width:600px;
+    height: 500px;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    margin: auto;
+}
+
+.pray-panel textarea{
+    opacity: 0.5;
+    resize:none;
+    width: 100%;
+    height: 100%;
+    font-size: 30px;
+}
+
+.pray-panel button{
+    font-size: 15px;
+    border-radius: 10px;
+    padding: 10px;
+    font-size: 50px;
+    box-shadow: #000000;
+}
