@@ -128,7 +128,7 @@ function Send(){
     var wish = document.getElementById('WishContent').value;
     console.log('願望是:'+wish);
 
-	gtag('event', wish, {'event_category': 'click', 'event_label': 'birth', 'value': wish });
+	gtag('event', 'wish', {'event_category': 'click', 'event_label': 'birth', 'value': wish });
 
     var board = document.getElementById('PrayBoard');
     board.style.visibility = 'hidden';
