@@ -15,27 +15,41 @@
 		</script>
     </head>
     <body>
-        <div class="base">
-            <div class="sky" id="Sky">
+        <!-- <div class="base"> -->
+            <!-- <div class="sky" id="Sky"> -->
 
-            </div> 
-            <div class="mountain">
-                <img src="images/mountain.png">
-            </div>
-            <div class="button-block">
-                <button onclick="ShowPray();"></button>
-            </div>
-            <div id="Letter" class="letter">
-            </div>
-        </div>
-        <div id="PrayBoard" class="overlay">
-            <div class="pray-panel">
-                <textarea id="WishContent" placeholder="請寫下你的心願"></textarea>
-                <br/>
-                <button onclick="Send();">送出</button>
-            </div>
+            <!-- </div>  -->
+            <!-- <div class="mountain"> -->
+                <!-- <img src="images/mountain.png"> -->
+            <!-- </div> -->
+            <!-- <div class="button-block"> -->
+                <!-- <button onclick="ShowPray();"></button> -->
+            <!-- </div> -->
+            <!-- <div id="Letter" class="letter"> -->
+            <!-- </div> -->
+        <!-- </div> -->
+        <!-- <div id="PrayBoard" class="overlay"> -->
+            <!-- <div class="pray-panel"> -->
+                <!-- <textarea id="WishContent" placeholder="請寫下你的心願"></textarea> -->
+                <!-- <br/> -->
+                <!-- <button onclick="Send();">送出</button> -->
+            <!-- </div> -->
 
-        </div>
-        <script src="scripts/index.js"></script>
+        <!-- </div> -->
+        <!-- <script src="scripts/index.js"></script> -->
+		<div id="countDown" style="color:white;font-size:72px;"></div>
+		<script>
+		setInterval(()=>{
+		 let now = new Date();
+		 let next = new Date(2021,11,28);
+		 let Diff = next - now;
+		 let DiffSecond = Diff/1000;
+		 let DiffMin = DiffSecond/60;
+		 let DiffHour = DiffMin/60;
+		 let DiffDay = DiffHour/24;
+		 let DiffString = parseInt(DiffDay) + '日' + parseInt(DiffHour%24) + '時' + parseInt(DiffMin%60) + '分' + parseInt(DiffSecond%60) + '秒';
+		 document.getElementById('countDown').innerText = DiffString;
+		},1000);
+		</script>
     </body>
 </html>
